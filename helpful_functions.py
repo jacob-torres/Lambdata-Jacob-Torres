@@ -41,7 +41,7 @@ def null_count(df):
     return sum
 
 
-def list_to_series(list, df, column_name):
+def list_to_column(list, df, column_name):
 
 
     """
