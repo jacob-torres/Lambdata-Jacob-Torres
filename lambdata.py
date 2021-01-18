@@ -10,8 +10,8 @@ The object has the attribute data, of type pandas dataframe
 
 Author: Jacob Torres
 Version: 0.0.1
-Published on 17 Jan 2021
-https://test.pypi.org/
+Published on 18 Jan 2021
+https://test.pypi.org/project/lambdata-jacob-torres/
 """
 
 import numpy as np
@@ -30,20 +30,20 @@ class Lambdata:
 
         if type(data) != 'pandas.core.frame.DataFrame':
             raise TypeError(
-                'Lambdata cannot accept data with a type other than Pandas DataFrame.'
+                "Lambdata cannot accept data with a type other than Pandas DataFrame."
             )
 
-            self.data = data
+        self.data = data
 
 
-    def tt_split(data, frac):
+    def tt_split(frac):
 
         """
         Returns the training and testing dataframes,
-        where frac = fraction of the data set aside for testing.
+        where frac = fraction that is training data.
         """
 
-        df = df.copy()
+        df = self.data.copy()
         train, test = train_test_split(df, train_size=frac)
 
         return train, test
@@ -52,7 +52,7 @@ class Lambdata:
     def null_count():
 
         """
-        Returns the sum of nulls in the dataframe
+        Returns the sum of nulls in the dataframe.
         """
 
         df = self.data.copy()
