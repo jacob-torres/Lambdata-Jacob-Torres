@@ -66,10 +66,10 @@ class Lambdata:
 
     def list_to_column(list, column_name):
 
-            """
-            Transforms a python list/array into a pandas series,
-            then returns the dataframe with the new series as a column.
-            """
+        """
+        Transforms a python list/array into a pandas series,
+        then returns the dataframe with the new series as a column.
+        """
 
         df = self.data.copy()
         series = pd.Series(list)
