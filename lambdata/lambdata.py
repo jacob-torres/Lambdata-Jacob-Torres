@@ -9,8 +9,8 @@ It has 3 manipulationmethods for manipulating Pandas DataFrames:
 The object has the attribute data, of type pandas dataframe
 
 Author: Jacob Torres
-Version: 0.0.1
-Published on 18 Jan 2021
+Version: 0.0.2
+Published on 20 Jan 2021
 https://test.pypi.org/project/lambdata-jacob-torres/
 """
 
