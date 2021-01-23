@@ -9,9 +9,9 @@ It has 3 manipulationmethods for manipulating Pandas DataFrames:
 The object has the attribute data, of type pandas dataframe
 
 Author: Jacob Torres
-Version: 0.0.2
-Published on 20 Jan 2021
-https://test.pypi.org/project/lambdata-jacob-torres/
+Version: 0.0.3
+Published on 22 Jan 2021
+https://test.pypi.org/project/lambdata-jacob-torres/0.0.3/
 """
 
 import numpy as np
@@ -21,27 +21,46 @@ from sklearn.model_selection import train_test_split
 
 class Lambdata:
 
-    def __init__(self, data):
 
+    def __init__(self, data):
         """
         Lambdata instantiates with a dataframe argument.
         Its methods are tt_split, null_count, and list_to_column.
         """
 
-        if type(data) != 'pandas.core.frame.DataFrame':
-            raise TypeError(
-                "Lambdata cannot accept data with a type other than Pandas DataFrame."
-            )
+        try:
+            e = "The data must be in a list or other collection."
+            self.data = pd.DataFrame(data)
 
-        self.data = data
+        except ValueError:
+            print(e)
+            return
 
 
-    def tt_split(frac):
-
+    def tt_split(self, frac):
         """
         Returns the training and testing dataframes,
         where frac = fraction that is training data.
         """
+
+        if type(frac) == 'int':
+            frac = float(frac)
+
+        try:
+            e =                 """
+            The fraction of the data that is split for training 
+            must be a decimal between 0.0 and 1.0.
+            """
+
+            if type(frac) != 'float':
+                raise TypeError
+
+            elif frac not in range(0.0, 1.0):
+                raise ValueError
+
+        except (TypeError, ValueError):
+            print(e)
+            return
 
         df = self.data.copy()
         train, test = train_test_split(df, train_size=frac)
@@ -49,8 +68,8 @@ class Lambdata:
         return train, test
 
 
-    def null_count():
 
+    def null_count(self):
         """
         Returns the sum of nulls in the dataframe.
         """
@@ -64,12 +83,23 @@ class Lambdata:
         return sum
 
 
-    def list_to_column(list, column_name):
-
+    def list_to_column(self, list, column_name):
         """
         Transforms a python list/array into a pandas series,
         then returns the dataframe with the new series as a column.
         """
+
+        try:
+            e = f"""
+            The list must be of length {len(self.data)}.
+            """
+
+            if len(list) != len(self.data):
+                raise ValueError
+        
+        except ValueError:
+            print(e)
+            return
 
         df = self.data.copy()
         series = pd.Series(list)
