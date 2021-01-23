@@ -5,7 +5,7 @@ with open('README.md', 'r', encoding='utf-8') as fh:
 
 setuptools.setup(
     name='Lambdata-Jacob-Torres',
-    version='0.0.2',
+    version='0.0.3',
     author='Jacob Torres',
     author_email='jacob@jacobtorres.net',
     description='A simple python package for manipulating Pandas dataframes.',
