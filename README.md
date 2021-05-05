@@ -48,5 +48,5 @@ such as a string, number, or other single object.
 
 Download and use the package from TestPypi:
 
-`pip install --index-url https://test.pypi.org/simple/ Lambdata-Jacob-Torres
+`pip install --index-url https://test.pypi.org/simple/ Lambdata-Jacob-Torres`
 
