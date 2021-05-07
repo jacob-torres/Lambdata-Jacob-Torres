@@ -3,15 +3,15 @@ Lambdata is a class object for basic data manipulation.
 It has 3 manipulationmethods for manipulating Pandas DataFrames:
     - tt_split: returns a training and testing set
     - null_count: returns the sum of all null values
-    - list_to_column: transforms a list to a column 
+    - list_to_column: transforms a list to a column
     and joins it with a given dataframe
 
 The object has the attribute data, of type pandas dataframe
 
 Author: Jacob Torres
-Version: 0.0.3
-Published on 22 Jan 2021
-https://test.pypi.org/project/lambdata-jacob-torres/0.0.3/
+Version: 0.0.1
+Published on 07 May 2021
+https://test.pypi.org/project/lambdata-jr/0.0.1/
 """
 
 import numpy as np
@@ -20,7 +20,6 @@ from sklearn.model_selection import train_test_split
 
 
 class Lambdata:
-
 
     def __init__(self, data):
         """
@@ -36,7 +35,6 @@ class Lambdata:
             print(e)
             return
 
-
     def tt_split(self, frac):
         """
         Returns the training and testing dataframes,
@@ -47,8 +45,8 @@ class Lambdata:
             frac = float(frac)
 
         try:
-            e =                 """
-            The fraction of the data that is split for training 
+            e = """
+            The fraction of the data that is split for training
             must be a decimal between 0.0 and 1.0.
             """
 
@@ -67,8 +65,6 @@ class Lambdata:
 
         return train, test
 
-
-
     def null_count(self):
         """
         Returns the sum of nulls in the dataframe.
@@ -81,7 +77,6 @@ class Lambdata:
             sum += df[col].isnull().sum()
 
         return sum
-
 
     def list_to_column(self, list, column_name):
         """
@@ -96,7 +91,7 @@ class Lambdata:
 
             if len(list) != len(self.data):
                 raise ValueError
-        
+
         except ValueError:
             print(e)
             return
