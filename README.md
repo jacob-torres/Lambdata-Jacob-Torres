@@ -1,5 +1,6 @@
 # Lambdata
 ### Jacob A. Torres
+Version 0.0.4
 https://github.com/jacob-torres/Lambdata-Jacob-Torres/
 
 This is a test Python package. It contains a module called Lambdata
